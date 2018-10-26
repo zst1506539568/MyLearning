@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="点击" id="btn" />
+<img src="" alt="" id="img">
+<script>
+    var btnObj = document.getElementById("btn");
+    btnObj.onclick = function () {
+        // alert("点击");
+        var img = document.getElementById("img");
+        img.src="../img/1.jpg";
+        img.width="300";
+        img.height="200";
+    }
+</script>
+</body>
+</html>

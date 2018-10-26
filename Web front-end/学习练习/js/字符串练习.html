@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //练习1：截取字符串
+        var str = "这是一个字符串练习";
+        var find = "字符串";
+        var index = str.indexOf(find);
+        str = str.substr(index,3);
+        console.log(str);
+
+        //练习2：找出所有o出现的位置
+
+        var str = "hello wod odd ott fbo nhyo";
+        var find = "od";
+        var index = 0;
+        while((index=str.indexOf(find,index))!=-1){
+            console.log(index);
+            index+=find.length;
+        }
+
+        //练习3：找到这个字符串中每个字符都出现了多少次
+
+        var str = "whatOareYyouYnoYshaHleiHoHmyHgod";
+        str = str.toLocaleLowerCase();
+        var Object = {};
+        for(var i=0;i<str.length;i++){
+            var key = str[i];
+            if(Object[key]){
+                Object[key]++;
+            }
+            else {
+                Object[key] = 1;
+            }
+        }
+        for (var key in Object){
+            console.log(key + " : " +Object[key]);
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

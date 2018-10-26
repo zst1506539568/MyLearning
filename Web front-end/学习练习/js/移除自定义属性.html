@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li score="10">111</li>
+    <li score="10">222</li>
+    <li score="10">333</li>
+    <li score="10">444</li>
+</ul>
+
+<script src="common.js"></script>
+<script>
+    var liObj = document.getElementsByTagName("li");
+    for (var i=0;i<liObj.length;i++){
+        liObj[i].removeAttribute("score");
+    }
+</script>
+</body>
+</html>

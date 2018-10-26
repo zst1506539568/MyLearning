@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            float: left;
+            list-style: none;
+            margin: 0 20px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><a href="../img/1.jpg" title="A"><img src="../img/1-small.jpg" alt=""></a></li>
+    <li><a href="../img/2.jpg" title="B"><img src="../img/2-small.jpg" alt=""></a></li>
+    <li><a href="../img/3.jpg" title="C"><img src="../img/3-small.jpg" alt=""></a></li>
+    <li><a href="../img/4.jpg" title="D"><img src="../img/4-small.jpg" alt=""></a></li>
+</ul>
+<div style="clear:both"></div>
+<img src="" alt="" id="show">
+<p id="photoName"></p>
+<script src="common.js"></script>
+<script>
+    var a = document.getElementsByTagName("a");
+    for (var i=0;i<a.length;i++){
+        a[i].onclick=function () {
+            my$("show").src=this.href;
+            my$("photoName").innerText=this.title;
+            return false;
+        }
+    }
+
+
+</script>
+</body>
+</html>

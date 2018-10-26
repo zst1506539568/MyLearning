@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="btn">
+<ul id="uu">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+
+<script src="common.js"></script>
+<script>
+    my$("btn").onclick=function () {
+        var count=0;
+        var ulObj=document.getElementById("uu").childNodes;
+        for (var i=0;i<ulObj.length;i++){
+            if (ulObj[i].nodeType==1&&ulObj[i].nodeName=="LI"){
+                count++;
+                ulObj[i].style.backgroundColor=count%2==0?"red":"yellow";
+            }
+        }
+    }
+</script>
+</body>
+</html>

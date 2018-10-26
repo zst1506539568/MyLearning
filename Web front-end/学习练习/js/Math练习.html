@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Maths() {
+            this.max = function () {
+                var maxValue = arguments[0];
+                for (var i = 0 ; i < arguments.length ; i++) {
+                    if(arguments[i] > maxValue){
+                        maxValue = arguments[i];
+                    }
+                }
+                return maxValue;
+            }
+        }
+        var x = new Maths();
+        console.log(x.max(10,20,30,40));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

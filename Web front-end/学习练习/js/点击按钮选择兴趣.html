@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="点击" id="btn">
+<input type="checkbox" value="1" name="xingqu">111
+<input type="checkbox" value="2" name="xingqu" id="ch1">222
+<input type="checkbox" value="3" name="xingqu" id="ch2">333
+<input type="checkbox" value="4" name="xingqu">444
+<input type="checkbox" value="5" name="xingqu">555
+<script>
+    function my$(id) {
+        return document.getElementById(id);
+    }
+   my$("btn").onclick=function () {
+        my$("ch1").checked=true;
+        my$("ch2").checked=true;
+    }
+</script>
+</body>
+</html>

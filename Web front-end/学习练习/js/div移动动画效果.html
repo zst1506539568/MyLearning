@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            margin-top: 10px;
+        }
+        div{
+            width: 200px;
+            height: 150px;
+            background-color: pink;
+            margin-top: 20px;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="400px" id="btn1">
+<input type="button" value="800px" id="btn2">
+<div id="dv"></div>
+<script src="common.js"></script>
+<script>
+    var left=0;
+    my$("btn1").onclick=function () {
+        var timeid=setInterval(function () {
+            if (left<400){
+                left+=40;
+            }else if(left>400&&left<=800){
+                left-=40
+            }
+            else {
+                clearInterval(timeid);
+            }
+            my$("dv").style.left=left+"px";
+        },200)
+    }
+    my$("btn2").onclick=function () {
+        var timeid=setInterval(function () {
+            if (left<800){
+                left+=40;
+            }
+            else {
+                clearInterval(timeid);
+            }
+            my$("dv").style.left=left+"px";
+        },200)
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .callBack{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="callBack"></div>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+<script>
+    var callBackObj=$(".callBack");
+    callBackObj.click(function () {
+        callBackObj.animate({
+            width:'200px',
+            height:'200px',
+            opacity:'0.5'
+        },2000,function () {
+            alert("动画执行完毕")
+        })
+    })
+</script>
+</body>
+</html>

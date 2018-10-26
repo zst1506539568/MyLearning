@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cls{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<p>111</p>
+<p class="cls">111</p>
+
+<span>111</span><br />
+<span class="cls">111</span><br />
+
+<div>111</div>
+<div class="cls">111</div>
+
+<input type="button" id="btn">
+<script src="common.js"></script>
+<script>
+    my$("btn").onclick=function () {
+        var cls = document.getElementsByClassName("cls");//h5中支持的新方法，IE9以上才能支持
+        for (var i=0;i<cls.length;i++){
+            cls[i].style.backgroundColor="green";
+        }
+    }
+
+</script>
+</body>
+</html>

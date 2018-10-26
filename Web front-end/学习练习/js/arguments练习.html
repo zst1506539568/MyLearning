@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arguments</title>
+    <script>
+        function f1(){
+            var sum=0;
+            for(var i=0;i<arguments.length;i++){
+                sum+=arguments[i];
+            }
+            return sum;
+        }
+        console.log(f1(10,20,50,70))
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

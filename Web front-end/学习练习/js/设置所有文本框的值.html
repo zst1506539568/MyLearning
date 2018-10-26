@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="设置" id="btn"><br/>
+<input type="text"><br/>
+<input type="text"><br/>
+<input type="text"><br/>
+<input type="text"><br/>
+<input type="text"><br/>
+<input type="text"><br/>
+<input type="text"><br/>
+<script>
+    document.getElementById("btn").onclick = function () {
+        var input = document.getElementsByTagName("input");
+        for (var i=0;i<input.length;i++){
+            if (input[i].type!="button") {
+                input[i].value="222222";
+            }
+
+        }
+    }
+</script>
+</body>
+</html>

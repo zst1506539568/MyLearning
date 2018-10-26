@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <p>11111111111</p>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <input type="text" value="原始">
+    <button>确定</button>
+    <a href="www.baidu.com">1111111111111</a>
+    <button id="btn1">改变text</button>
+    <button id="btn2">改变html</button>
+    <button id="btn3">改变value</button>
+    <button id="btn4">改变herf的值</button>
+    <button id="btn5"></button>
+    <button id="btn6"></button>
+</div>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+<script>
+    var liObj=$("li:first-child");
+    var pObj=$("p");
+    var inputObj=$("input");
+    var aObj=$("a");
+    $("#btn1").click(function () {
+        // liObj.text("改变了");
+        liObj.text(function (i,origText) {
+            return "Old text: " + origText + " New text: Hello world! (index: " + i + ")";
+        })
+    });
+    $("#btn2").click(function () {
+        // pObj.html("<a href='http://www.baidu.com'>11111111111</a>");
+        pObj.html(function (i,orightml) {
+            return "Old html: " + orightml + "New html: <b>Hello World</b> (index: " + i + ")";
+        })                                 //回调函数，第一个参数是索引，第二个参数是原始值
+    });
+    $("#btn3").click(function () {
+        inputObj.val("改变了");
+        var value=inputObj.val();
+        console.log(value);
+    });
+    $("#btn4").click(function () {
+        // aObj.attr({
+        //     "href":"http://www.baidu.com",
+        //     "id":"baidu"
+        // });
+        aObj.attr("href",function (i,orightml) {
+            return "http://" + orightml;
+        })
+    })
+</script>
+</body>
+</html>

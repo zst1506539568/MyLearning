@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<input type="button" id="btn">
+<div id="dv"></div>
+<script>
+
+    var kungfu = ["降龙十八掌", "黯然销魂掌", "葵花宝典", "九阴真经", "吸星大法", "如来神掌", "化骨绵掌", "玉女心经", "极乐神功"];
+    document.getElementById("btn").onclick=function () {
+        var ulObj=document.createElement("ul");
+        document.getElementById("dv").appendChild(ulObj);
+        for (var i=0;i<kungfu.length;i++){
+            var liObj=document.createElement("li");
+            liObj.innerHTML=kungfu[i];
+            document.getElementById("dv").appendChild(liObj);
+        }
+    }
+</script>
+</body>
+</html>

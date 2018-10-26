@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: deeppink;
+        }
+    </style>
+</head>
+<body>
+<div id="dv"></div>
+<input type="button" value="dianji" id="btn">
+<script src="common.js"></script>
+<script>
+    var opacity=10
+    my$("btn").onclick=function () {
+        setInterval(function () {
+            if (opacity>0){
+                opacity--
+                my$("dv").style.opacity=opacity/10;
+            }
+        },500)
+    }
+</script>
+</body>
+</html>

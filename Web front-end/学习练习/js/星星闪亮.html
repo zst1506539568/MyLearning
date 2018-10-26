@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: black;
+        }
+        span{
+            color: green;
+            position: absolute;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="light" id="btn1">
+<input type="button" value="stop" id="btn2">
+<div id="dv"></div>
+<span></span>
+<script src="common.js"></script>
+<script>
+
+    my$("btn1").onclick=function () {
+        time =setInterval(function () {
+            my$("dv").innerHTML="<span>★</span>";
+            var x=Math.random()*300+1;
+            var y=Math.random()*300+1;
+            my$("dv").firstElementChild.style.left=x+"px";
+            my$("dv").firstElementChild.style.top=y+"px";
+
+        },50)
+    }
+    my$("btn2").onclick=function () {
+        clearInterval(time)
+    }
+
+</script>
+</body>
+</html>

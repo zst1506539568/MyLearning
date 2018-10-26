@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+        }
+        div{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="start" id="btn1">
+<input type="button" value="stop" id="btn2">
+<div>
+    <img src="../img/1.jpg" alt="">
+    <img src="../img/2.jpg" alt="">
+</div>
+<script src="common.js"></script>
+<script>
+    my$("btn1").onclick=function () {
+         times=setInterval(function () {
+            var x=Math.random()*100+1;
+            var y=Math.random()*100+1;
+            document.getElementsByTagName("div")[0].style.left=x+"px";
+            document.getElementsByTagName("div")[0].style.top=y+"px";
+        },100)
+        console.log(times);
+    }
+    my$("btn2").onclick=function () {
+        clearInterval(times);
+    }
+</script>
+</body>
+</html>

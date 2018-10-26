@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="dv">哦哦
+    <span>这是div中的第一个span标签</span>
+    <p>这是div中的第二个元素,第一个p标签</p>
+    <ul id="uu">
+        <li>乔峰</li>
+        <li>鹿茸</li>
+        <li id="three">段誉</li>
+        <li>卡卡西</li>
+        <li>雏田</li>
+    </ul>
+</div>
+<script src="common.js"></script>
+<script>
+    var obj=document.getElementById("uu");
+    //父节点
+    console.log(obj.parentNode);
+    //父元素
+    console.log(obj.parentElement);
+    //子节点
+    console.log(obj.childNodes);
+    //子元素
+    console.log(obj.children);
+    //第一个子节点
+    console.log(obj.firstChild);
+    //第一个子元素
+    console.log(obj.firstElementChild);
+    //最后一个子节点
+    console.log(obj.lastChild);
+    //最后一个子元素
+    console.log(obj.lastElementChild);
+    //某元素的前一个兄弟节点
+    console.log(obj.previousSibling);
+    //某元素的前一个兄弟元素
+    console.log(obj.previousElementSibling);
+    //某元素的后一个兄弟节点
+    console.log(obj.nextSibling);
+    //某元素的后一个兄弟元素
+    console.log(obj.nextElementSibling);
+</script>
+</body>
+</html>

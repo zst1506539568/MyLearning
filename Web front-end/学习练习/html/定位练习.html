@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .banner{
+            width: 520px;
+            height: 280px;
+            background: url("../img/tb.jpg") repeat;
+            position: relative;
+            left: 50%;
+            margin-left: -260px;
+        }
+        .right,
+        .left{
+            position: absolute;
+            top: 50%;
+            margin-top: -18px;
+        }
+        .right{
+            right: 0;
+        }
+        .left{
+            left: 0;
+        }
+        a{
+            width: 24px;
+            height: 36px;
+        }
+        a:hover{
+            background-color: white;
+        }
+        .banner ul{
+            width: 100px;
+            height: 15px;
+            border-radius: 30px;
+            background-color: #d6d6d6;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: -35px;
+        }
+        .banner ul li{
+            width: 8px;
+            height: 8px;
+
+            list-style: none;
+            float: left;
+            background-color: white;
+            margin: 3px 6px;
+            border-radius: 50%;
+        }
+        .banner .current{
+           background-color: chocolate;
+        }
+    </style>
+</head>
+<body>
+<div class="banner">
+    <a href="#" class="right"><img src="../img/right.png" ></a>
+    <a href="#" class="left"><img src="../img/left.png" ></a>
+    <ul>
+        <li class="current"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+</body>
+</html>

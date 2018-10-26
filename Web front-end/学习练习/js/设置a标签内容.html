@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="点击" id="btn"/>
+<a href="http://www.baidu.com" id="a1">百度</a>
+<script>
+    document.getElementById("btn").onclick = function () {
+        var aObj = document.getElementById("a1");
+        aObj.href = "http://www.sina.com";
+        aObj.innerText = "新浪";
+    }
+</script>
+</body>
+</html>

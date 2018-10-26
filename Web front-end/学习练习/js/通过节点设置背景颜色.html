@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+<input type="button" id="btn" value="dianji">
+<div id="dv">
+    <span>这是div中的第一个span标签</span>
+    <p>这是div中的第二个元素,第一个p标签</p>
+    <span>这是div中的第一个span标签</span>
+    <p>这是div中的第二个元素,第一个p标签</p>
+    <span>这是div中的第一个span标签</span>
+    <p>这是div中的第二个元素,第一个p标签</p>
+</div>
+
+<script src="common.js"></script>
+<script>
+my$("btn").onclick=function () {
+    var dvObj=my$("dv");
+    var pObj=dvObj.childNodes;
+    for (var i=0;i<pObj.length;i++){
+        if (pObj[i].nodeType==1&&pObj[i].nodeName=="P"){
+            pObj[i].style.backgroundColor="pink";
+        }
+    }
+}
+</script>
+</body>
+</html>

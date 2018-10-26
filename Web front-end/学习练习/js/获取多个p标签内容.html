@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="dianji">
+<div id="dv1">
+    <p>111</p>
+    <p>111</p>
+    <p>111</p>
+    <p>111</p>
+</div>
+<div id="dv2">
+    <p>11122222222</p>
+    <p>11122222</p>
+    <p>1112222222</p>
+    <p>1112222222</p>
+</div>
+
+<script>
+    document.getElementById("btn").onclick = function () {
+        var pObj=document.getElementById("dv1").getElementsByTagName("p");
+        for (var i=0;i<pObj.length;i++){
+            pObj[i].innerText="22222222222";
+        }
+    }
+</script>
+</body>
+</html>

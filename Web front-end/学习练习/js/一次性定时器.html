@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="common.js "></script>
+<script>
+    window.onload=function () {               //其中的代码会在页面加载完成后再执行，现在标签写在后面，确仍然可以正确的执行
+        var timeid=setTimeout(function () {
+            alert("aaa")
+        },1000);
+        my$("btn").onclick=function () {
+            clearTimeout(timeid);
+        }
+    }
+
+</script>
+<input type="button" value="dianji" id="btn">
+</body>
+</html>

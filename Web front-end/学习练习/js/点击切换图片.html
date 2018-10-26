@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<img src="../img/1.jpg" alt="">-->
+<!--<script>-->
+    <!--var img = document.getElementsByTagName("img");-->
+    <!--img[0].onclick=function () {-->
+        <!--this.src="../img/110.png"-->
+    <!--}-->
+<!--</script>-->
+
+
+<a href="../img/111111111.png" id="a1"><img src="../img/1.jpg" alt="" id="i1"></a>
+<script>
+    var i1 = document.getElementById("i1");
+    i1.onclick=function () {
+        this.src=document.getElementById("a1").href;
+        return false;//跳转后路径不会改变了
+    }
+</script>
+</body>
+</html>

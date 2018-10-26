@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div::after{
+            content: "我";    /*   必写 ，且brfore和after是行级元素   也是个盒子  */
+            background-color: pink;
+            font-size: 20px;
+        }
+        div:before{
+            content: "喔喔";
+            background-color: red;
+
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        shishishi
+    </div>
+</body>
+</html>

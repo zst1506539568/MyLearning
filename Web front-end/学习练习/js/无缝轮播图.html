@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .inner{
+            width: 730px;
+            height: 454px;
+            position: relative;
+            overflow: hidden;
+        }
+        .box{
+            width: 730px;
+            height: 454px;
+            margin: 100px auto;
+            padding: 5px;
+            border: 1px solid #666666;
+        }
+        .inner ul{
+            width: 1000%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .inner li {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="inner">
+        <ul>
+            <li><a href="#"><img src="../img/roll-picture/1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/roll-picture/2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/roll-picture/3.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/roll-picture/4.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/roll-picture/5.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/roll-picture/6.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/roll-picture/1.jpg" alt=""></a></li>
+        </ul>
+    </div>
+</div>
+<script src="common.js"></script>
+<script>
+    var inner=document.getElementsByClassName("inner")[0];
+    var ulObj=inner.children[0];
+    var liObj=ulObj.children;
+    var width=inner.offsetWidth;
+    var current=0;
+    function f1() {
+        current-=10;
+        if (current<-4380){
+            ulObj.style.left=0;
+            current=0;
+        } else{
+            ulObj.style.left=current+"px";
+        }
+    }
+    var timeid=setInterval(f1,50);
+    inner.onmouseover=function () {
+        clearInterval(timeid);
+    }
+    inner.onmouseout=function () {
+        timeid=setInterval(f1,50)
+    }
+</script>
+</body>
+</html>

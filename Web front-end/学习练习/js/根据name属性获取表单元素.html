@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn">
+<input type="text" name="2" value="111">
+<input type="text" name="1" value="111">
+<input type="text" name="2" value="111">
+<input type="text" name="1" value="111">
+
+
+<script src="common.js"></script>
+
+<script>
+    my$("btn").onclick=function () {
+        var name = document.getElementsByName("2");
+        for (var i=0;i<name.length;i++){
+            name[i].value="33333333333";
+        }
+    }
+</script>
+</body>
+</html>

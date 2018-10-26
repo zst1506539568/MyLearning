@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //第一种模式
+        // function student(name,age) {
+        //     var student = new Object();
+        //     student.name = name;
+        //     student.age = age;
+        //     student.hobby = function () {
+        //         console.log(this.name + this.age + "爱看书");
+        //     }
+        //     return student;
+        // }
+        // var stu1 = student("zhang",23);
+        // console.log(stu1.hobby() )
+
+
+
+        //第二种模式
+        // function Student(name,age) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.hobby = function () {
+        //         console.log(this.name + this.age + "爱看书");
+        //     }
+        // }
+        // var stu1 = new Student("zhang",23);
+        // console.log(stu1.name + stu1.age);
+        // stu1.hobby();
+
+        //第三种模式
+        var student={
+            name:"zhang",
+            age:23,
+            hobby:function () {
+                console.log("我是" + this.name + "我" + this.age)
+            }
+        }
+        student["name"] = "wang";
+
+        console.log(student.age);
+        student.hobby();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

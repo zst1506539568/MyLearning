@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="dianji" id="btn1">
+<input type="button" value="dianji2" id="btn2">
+<input type="button" value="dianji3" id="btn3">
+<div id="dv"></div>
+
+<script src="common.js"></script>
+<script>
+    var i=0;
+    my$("btn1").onclick=function () {
+        i++
+        var input=document.createElement("input");
+        input.type="button";
+        input.value="dianji"+i;
+        // my$("dv").appendChild(input);//把元素插入到第一个元素之后
+
+        //把元素插入到第一个元素之前
+        my$("dv").insertBefore(input,my$("dv").firstElementChild);
+    }
+    my$("btn2").onclick=function () {
+        //每次都移除第一个元素
+        my$("dv").removeChild(my$("dv").firstElementChild);
+    }
+
+    my$("btn3").onclick=function () {
+        //移除所有元素
+        while (my$("dv").firstElementChild){
+            my$("dv").removeChild(my$("dv").firstElementChild);
+        }
+    }
+
+</script>
+</body>
+</html>

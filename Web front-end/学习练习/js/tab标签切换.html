@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .tab{
+            margin: 200px 200px;
+        }
+        .choose-lab{
+            width: 300px;
+            height: 50px;
+        }
+        .choose-lab .one{
+            margin-top: 3px;
+            margin-bottom: 0;
+        }
+        .choose-lab li{
+            width: 60px;
+            height: 47px;
+            background-color: pink;
+            float: left;
+            list-style: none;
+            margin: 0 7.5px;
+            margin-bottom: 3px;
+        }
+        .main-tab{
+            width: 285px;
+            height: 200px;
+            position: relative;
+        }
+        .main-tab .tab-list{
+            width: 285px;
+            height: 200px;
+            background-color: pink;
+            margin-left: 7.5px;
+            position: absolute;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="tab">
+    <div class="choose-lab">
+        <ul>
+            <li value="1" class="one">1</li>
+            <li value="2">2</li>
+            <li value="3">3</li>
+            <li value="4">4</li>
+        </ul>
+    </div>
+    <div class="main-tab">
+        <div class="tab-list" id="tab-1">111</div>
+        <div class="tab-list hide" id="tab-2">222</div>
+        <div class="tab-list hide" id="tab-3">333</div>
+        <div class="tab-list hide" id="tab-4">444</div>
+    </div>
+</div>
+
+<script src="common.js"></script>
+<script>
+    var li = document.getElementsByTagName("li");
+    for (var i=0;i<li.length;i++){
+        li[i].onclick=function () {
+            for (var x=0;x<li.length;x++){
+                li[x].style.marginBottom="3px";
+                li[x].style.height="47px";
+                li[x].style.marginTop="0px";
+            }
+            this.style.marginBottom="0px"
+            this.style.height="50px"
+            var tablist=document.getElementsByClassName("tab-list");
+            for (var j=0;j<li.length;j++){
+                tablist[j].className="tab-list hide"
+            }
+            tab(this.value-1);
+        }
+    } 
+    function tab(elements) {
+        var tablist=document.getElementsByClassName("tab-list");
+        tablist[elements].className="tab-list";
+    }
+</script>
+</body>
+</html>

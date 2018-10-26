@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="没点">
+<input type="button" value="没点">
+<input type="button" value="没点">
+<input type="button" value="没点">
+<input type="button" value="没点">
+<script>
+    var input=document.getElementsByTagName("input");
+    for (var i=0;i<input.length;i++){
+        input[i].onclick=function(){
+            for(var j=0;j<input.length;j++){
+                input[j].value="没点";
+            }
+            this.value="点了";
+        }
+
+    }
+</script>
+</body>
+</html>

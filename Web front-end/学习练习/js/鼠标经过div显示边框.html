@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .divs{
+            width: 200px;
+            height: 300px;
+            background-color: wheat;
+        }
+    </style>
+</head>
+<body>
+<div class="divs" id="divs">111</div>
+<script src="common.js"></script>
+<script>
+   my$("divs").onmouseover=function () {
+       this.style.border="5px solid red";
+   }
+   my$("divs").onmouseout=function () {
+       this.style.border="";
+   }
+</script>
+</body>
+</html>

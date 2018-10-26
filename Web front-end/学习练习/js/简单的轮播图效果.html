@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+         .inner{
+             width: 730px;
+             height: 454px;
+             position: relative;
+             overflow: hidden;
+         }
+        .box{
+            width: 730px;
+            height: 454px;
+            margin: 100px auto;
+            padding: 5px;
+            border: 1px solid #666666;
+        }
+        .inner ul{
+            width: 1000%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .inner li {
+            float: left;
+        }
+        .square{
+            border-radius: 3px;
+            background-color: #cccccc;
+            position: absolute;
+            right: 290px;
+            bottom: 10px;
+        }
+        .square span{
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: white;
+            text-align: center;
+            line-height: 16px;
+            margin: 2px 2px 0;
+        }
+        .square span.current{
+            background-color: crimson;
+        }
+        .left,
+        .right{
+            width: 24px;
+            height: 36px;
+            position: absolute;
+            top: 210px;
+            background-color: #cccccc;
+            display: none;
+            cursor: pointer;
+        }
+        .left{
+            left: 0;
+        }
+        .right{
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="inner">
+        <ul>
+            <li><a href="#"><img src="../img/roll-picture/1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/roll-picture/2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/roll-picture/3.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/roll-picture/4.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/roll-picture/5.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/roll-picture/6.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/roll-picture/1.jpg" alt=""></a></li>
+        </ul>
+        <div class="square">
+            <span class="current"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="left"><img src="../img/left.png" alt=""></div>
+        <div class="right"><img src="../img/right.png" alt=""></div>
+    </div>
+</div>
+
+<script src="common.js"></script>
+<script>
+    var innerObj=document.getElementsByClassName("box")[0].children[0];
+    var ulObj=innerObj.children[0];
+    var liObj=ulObj.children;
+    var width=innerObj.offsetWidth;
+    var spanObj=innerObj.children[1].children;
+    var leftObj=document.getElementsByClassName("left")[0];
+    var rightObj=document.getElementsByClassName("right")[0];
+
+
+    //鼠标放在图片上   左右箭头显示
+    innerObj.onmouseover=function () {
+        leftObj.style.display="block";
+        rightObj.style.display="block";
+    };
+    innerObj.onmouseout=function () {
+        leftObj.style.display="none";
+        rightObj.style.display="none";
+    };
+
+
+    //触碰小圆点图片移动函数
+    function pointMove(element) {
+        for (var j=0;j<spanObj.length;j++){
+            spanObj[j].className="";
+        }
+        element.className="current";
+
+    }
+
+
+    //小圆点的鼠标触碰事件
+    for ( var i=0;i<spanObj.length;i++){
+        spanObj[i].setAttribute("index",i);
+        spanObj[i].onmouseover=function () {
+            pointMove(this);
+            var index=this.getAttribute("index");
+            animate(ulObj,-width*index);
+        }
+    }
+
+
+    //点击左箭头图片移动
+    leftObj.onclick =function () {
+        // var pointLocation=document.getElementsByClassName("current")[0];
+        // var index=pointLocation.getAttribute("index");
+        // var targetLocation=pointLocation.previousElementSibling;
+        // if (index>0){
+        //     pointMove(targetLocation);
+        //     var index=targetLocation.getAttribute("index");
+        //     animate(ulObj,-width*index);
+        // }
+
+        var pointLocation=document.getElementsByClassName("current")[0];
+        var index=pointLocation.getAttribute("index");
+        if (index==0){
+            index=5;
+            ulObj.style.left=-4380+"px";
+            var targetLocation=spanObj[5];
+            pointMove(targetLocation);
+            // animate(ulObj,index*width);
+        }else {
+            var targetLocation=pointLocation.previousElementSibling;
+            index--;
+            pointMove(targetLocation);
+            animate(ulObj,-index*width);
+        }
+    };
+
+
+    //点击右箭头图片移动
+    rightObj.onclick =function () {
+        //获取当前圆点的位置
+        var pointLocation=document.getElementsByClassName("current")[0];
+        var index=pointLocation.getAttribute("index");
+        if (index==5){
+            index=0;
+            ulObj.style.left=0;
+            var targetLocation=spanObj[0];
+            pointMove(targetLocation);
+            // animate(ulObj,index*width);
+        }else {
+            var targetLocation=pointLocation.nextElementSibling;
+            index++;
+            pointMove(targetLocation);
+            animate(ulObj,-index*width);
+        }
+
+    };
+
+
+    //缓动动画函数
+    function animate(element,target) {
+        clearInterval(element.timeid);
+        element.timeid=setInterval(function () {
+            var step=10;
+            var currentLocation=element.offsetLeft;
+            step=currentLocation<target?step:-step;
+            currentLocation+=step;
+            if (Math.abs(target-currentLocation)>Math.abs(step)){
+                element.style.left=currentLocation+"px";
+            } else {
+                clearInterval(element.timeid);
+                element.style.left=target+"px";
+            }
+        },1)
+    }
+</script>
+</body>
+</html>

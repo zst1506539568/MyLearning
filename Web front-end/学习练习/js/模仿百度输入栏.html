@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box {
+            width: 450px;
+            margin: 200px auto;
+        }
+        #in {
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <input type="text" id="in">
+</div>
+
+<script src="common.js"></script>
+<script>
+    my$("in").onkeyup=function () {
+        if (my$("divs")){
+            my$("box").removeChild(my$("divs"));
+        }
+        var content = ["你是吧", "尼", "你我他", "我是", "我不是", "为111"];
+        var hotWord = [];
+        var text = this.value;
+        for (var i = 0; i < content.length; i++) {
+            if (content[i].indexOf(text) == 0) {
+                hotWord.push(content[i]);
+            }
+        }
+        // console.log(hotWord);
+        //创建一个div，显示与输入相近的内容
+        if (this.value.length==0||hotWord.length==0){
+           if (my$("divs")){
+               my$("box").removeChild(my$("divs"));
+           }
+           return;          //如果输入框为空或者没有匹配到信息则删除div     return是制止后面的创建代码再次执行创建
+        }
+        var divObj=document.createElement("div");
+        my$("box").appendChild(divObj);
+        divObj.style.width="350px";
+        divObj.style.height="100px";
+        divObj.style.backgroundColor="pink";
+        divObj.style.border="1px solid red";
+        divObj.id="divs";
+        var ulObj=document.createElement("ul");
+        my$("divs").appendChild(ulObj);
+        for (var i=0;i<hotWord.length;i++) {
+            var liObj = document.createElement("li");
+            ulObj.appendChild(liObj);
+            liObj.innerText = hotWord[i];
+            liObj.style.listStyle = "none";
+        }
+    }
+</script>
+</body>
+</html>

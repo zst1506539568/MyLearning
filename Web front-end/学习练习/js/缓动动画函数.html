@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 150px;
+            background-color: #666666;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<input type="button" id="btn1" value="400px">
+<input type="button" id="btn2" value="800px">
+<div id="dv"></div>
+<script src="common.js"></script>
+<script>
+    my$("btn1").onclick=function () {
+        slowAnimate(my$("dv") ,400);
+    };
+    my$("btn2").onclick=function () {
+        slowAnimate(my$("dv") ,800);
+    };
+
+    function slowAnimate(element,target) {
+        clearInterval(timeid);
+        var timeid=setInterval(function () {
+            var current=element.offsetLeft;
+            step=(target-current)/10;
+            step=step>0?Math.ceil(step):Math.floor(step);
+            if (Math.abs(target-current)>Math.abs(step)){
+                current+=step;
+                element.style.left=current+"px";
+            }else{
+                element.style.left=target+"px";
+                clearInterval(timeid);
+            }
+            //测试代码
+            console.log("当前距离："+current+"，目标距离："+target+"，步长："+step+"");
+        },20);
+    }
+</script>
+</body>
+</html>

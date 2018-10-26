@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="bianse">
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+        <li>555</li>
+        <li>666</li>
+    </ul>
+<script src="common.js"></script>
+<script>
+   my$("btn").onclick=function () {
+       var liObj = document.getElementsByTagName("li");
+       for (var i=0;i<liObj.length;i++){
+           if(i%2==0){
+               liObj[i].style.backgroundColor="red";
+           }else{
+               liObj[i].style.backgroundColor="green";
+           }
+       }
+   }
+</script>
+</body>
+</html>

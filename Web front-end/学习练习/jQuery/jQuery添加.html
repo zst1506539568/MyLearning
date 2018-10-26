@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            width: 100px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p>11111111111</p>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li><p class="p">3333333</p></li>
+    </ul>
+    <input type="text" value="原始">
+    <button>确定</button>
+    <a href="www.baidu.com">1111111111111</a>
+    <button id="btn1">append</button>
+    <button id="btn2">prepend</button>
+    <button id="btn3">before</button>
+    <button id="btn4">after</button>
+    <button id="btn5">empty</button>
+    <button id="btn6">remove</button>
+</div>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+<script>
+    //append,prepend    是在标签内添加
+    //before，after     是在该标签的前后添加
+    var pObj=$("p");
+    var ulObj=$("ul");
+    $(document).ready(function () {
+        $("#btn1").click(function () {
+            pObj.append("append");
+        });
+        $("#btn2").click(function () {
+            pObj.prepend("prepend");
+        });
+        $("#btn3").click(function () {
+            pObj.before("before");
+        });
+        $("#btn4").click(function () {
+            pObj.after("after");
+        });
+        $("#btn5").click(function () {
+            ulObj.empty();   //只将元素中的内容删去，而该元素依旧存在
+        });
+        $("#btn6").click(function () {
+            pObj.remove(".p");     //将元素和其中的内容都删去
+        });
+    })
+
+</script>
+</body>
+</html>

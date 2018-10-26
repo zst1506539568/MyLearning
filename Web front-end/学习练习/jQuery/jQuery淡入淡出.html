@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            background-color: red;
+            width: 110px;
+            height: 50px;
+        }
+        .green{
+            background-color: green;
+            width: 100px;
+            height: 50px;
+        }
+        .yellow{
+            background-color: yellow;
+            width: 100px;
+            height: 50px;
+        }
+        .blue{
+            background-color: blue;
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="red"></div>
+<div class="green"></div>
+<div class="yellow"></div>
+<div class="blue"></div>
+<button id="btn1">默认速度</button>
+<button id="btn2">快速</button>
+<button id="btn3">慢速</button>
+<button id="btn4">3000</button>
+<button id="btn5">淡入淡出通按钮</button>
+<button id="btn6">不透明度</button>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#btn1").click(function () {
+            $(".red").fadeOut()
+        });
+        $("#btn2").click(function () {
+            $(".green").fadeOut("fast")
+        });
+        $("#btn3").click(function () {
+            $(".yellow").fadeOut("slow")
+        });
+        $("#btn4").click(function () {
+            $(".blue").fadeOut(3000)
+        });
+        $("#btn5").click(function () {
+            $(".blue").fadeToggle()
+        });
+        $("#btn6").click(function () {
+            $(".blue").fadeTo(1500,0.2)
+        });
+
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+.father{
+    width: 820px;
+    height: 565px;
+    border: #cfcfcf solid 4px;
+    background-color: #eeeeee;
+}
+.father .title{
+    width: 750px;
+    height: 58px;
+    border-bottom: #d6d6d6 solid 2px;
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top: 45px;
+    font-weight: bolder;
+    font-size: 25px;
+    line-height: 65px;
+    padding-left: 0px;
+
+}
+.father div{
+    width: 730px;
+    height: 58px;
+    border-bottom: #d6d6d6 dashed 2px;
+    margin-left: 35px;
+    margin-right: 35px;
+    color: #313b3a;
+    font-size: 20px;
+    line-height: 75px;
+    padding-left: 20px;
+
+
+}
