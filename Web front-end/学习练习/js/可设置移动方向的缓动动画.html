@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .dv {
+            width: 200px;
+            height: 100px;
+            background-color: #0000cc;
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<button id="btn1">移动400</button>
+<button id="btn2">移动800</button>
+<div class="dv"></div>
+<script>
+    var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
+    var divObj = document.getElementsByClassName("dv")[0];
+
+    /*
+    * element----需要获取属性的元素
+    * attr----需要获取的属性*/
+    function getStyle(element, attr) {
+        return window.getComputedStyle ? window.getComputedStyle(element, null)[attr] : element.currentStyle[attr];
+    }
+
+    /*
+    * element----需要移动的元素
+    * attr----属性
+    * target----目的地址*/
+    function animate(element, attr, target) {
+        clearInterval(element.timeId);
+        element.timeId = setInterval(function () {
+            var current = parseInt(getStyle(element, attr));
+            var step = (target - current) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            current += step;
+            element.style[attr] = current + "px";
+            if (current == target) {
+                clearInterval(element.timeId);
+            }
+            console.log("目标位置：" + target + "，当前位置：" + current + "，步长：" + step);
+        }, 20)
+
+    }
+
+    btn1.onclick = function () {
+        animate(divObj, "left", 400);
+    };
+    btn2.onclick = function () {
+        animate(divObj, "height", 800);
+    };
+
+
+</script>
+</body>
+</html>
